@@ -1,0 +1,657 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f5efe6;
+  padding-top: 70px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #e74c3c;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  height: 70px;
+  gap: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.logonav {
+  color: #f5efe6;
+  font-family: "Great Vibes", cursive;
+  font-size: 30px;
+}
+/* SEARCH */
+.search {
+  position: relative;
+  width: 380px; /* panjang khas di gambar */
+  margin-left: 50px;
+}
+
+.search input {
+  width: 100%;
+  height: 38px; /* tipis & clean */
+  border: none;
+  border-radius: 4px;
+  background: #f5efe6; /* warna krem asli */
+  padding-left: 40px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* placeholder */
+.search input::placeholder {
+  color: #e74c3c;
+}
+
+/* icon */
+.search i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #e74c3c; /* merah soft */
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+  margin-left: 300px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #f5efe6;
+  font-weight: 500;
+}
+
+.menu a.active {
+  color: #1f3c88;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.menu a:hover {
+  color: #1f3c88;
+}
+
+/* PROFIL SINGKAT */
+.about {
+  position: relative;
+  height: 100vh;
+  background: url("../Hero-img/Toko\ Lima\ Jaya.jpeg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+/* overlay terang */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* container */
+.about-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  margin: auto;
+}
+
+/* TEXT */
+.about-text {
+  width: 55%;
+}
+
+.about-text h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 70px;
+  color: #e74c3c;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  color: #1f3c88;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.fade-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease;
+}
+
+/* saat aktif */
+.fade-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* IMAGES */
+.about-images {
+  position: relative;
+  width: 40%;
+  height: 400px;
+}
+
+/* gambar bulat */
+.img {
+  position: absolute;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* posisi */
+.img.top {
+  width: 140px;
+  height: 140px;
+  right: 50px;
+  top: 0;
+}
+
+.img.middle {
+  width: 200px;
+  height: 200px;
+  right: 0;
+  top: 120px;
+}
+
+.img.bottom {
+  width: 160px;
+  height: 160px;
+  right: 80px;
+  bottom: 0;
+}
+
+/* TEMUKAN KAMI */
+.find-us {
+  background: #f5efe6;
+  padding: 80px 0;
+}
+
+.find-container {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+/* MAP */
+.map {
+  width: 55%;
+  height: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* TEXT */
+.find-text {
+  width: 40%;
+  text-align: center;
+}
+
+.find-text h2 {
+  font-size: 40px;
+  color: #1f3c88;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.arrow {
+  font-size: 50px;
+  margin: 20px 0;
+  transform: rotate(200deg);
+  color: #e74c3c;
+}
+
+/* info */
+.find-text h3 {
+  color: #e74c3c;
+  margin-top: 20px;
+}
+
+.find-text p {
+  color: #1f3c88;
+  margin-bottom: 20px;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 28px;
+  border-radius: 30px;
+
+  background: #25d366;
+  color: white;
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  transform: translateY(-4px);
+}
+
+/* LAYANAN */
+.services {
+  background: #f5efe6;
+  padding: 50px 0;
+  text-align: center;
+}
+
+/* TITLE */
+.services h2 {
+  color: #1f3c88;
+  font-size: 28px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 80px;
+  letter-spacing: 6px;
+}
+
+/* CONTAINER */
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+/* ITEM */
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* gambar bulat */
+.service-item img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* whatsapp icon bulat */
+.wa-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #25d366;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wa-icon i {
+  font-size: 60px;
+  color: #f5efe6;
+}
+
+.wa-link {
+  text-decoration: none;
+}
+
+.wa-link:hover .wa-icon {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+/* text */
+.service-item p {
+  margin-top: 15px;
+  color: #1f3c88;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  background: #e74c3c;
+  color: white;
+  padding: 70px 120px;
+}
+
+/* GRID utama */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  gap: 60px;
+}
+
+/* kolom */
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px; /* bikin atas & bawah sejajar */
+}
+
+.col li:hover {
+  color: #1f3c88;
+}
+
+/* logo */
+.logo {
+  font-family: "Great Vibes", cursive;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+/* top section */
+.top h3 {
+  margin-bottom: 10px;
+}
+
+.top ul {
+  list-style: none;
+}
+
+.top li {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.top a {
+  text-decoration: none;
+  color: #f5efe6;
+}
+
+.top a:hover {
+  text-decoration: none;
+  color: #1f3c88;
+}
+
+/* bottom section */
+.bottom h3 {
+  margin-bottom: 10px;
+}
+
+.bottom p {
+  font-size: 14px;
+  max-width: 250px;
+}
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  /* ================= NAVBAR ================= */
+  .menu {
+    margin-left: auto;
+    gap: 15px;
+  }
+
+  .search {
+    width: 220px;
+    margin-left: 20px;
+  }
+
+  /* ================= ABOUT ================= */
+  .about {
+    height: auto;
+    padding: 80px 40px;
+  }
+
+  .about-container {
+    gap: 40px;
+  }
+
+  .about-text {
+    width: 55%;
+  }
+
+  .about-text h1 {
+    font-size: 50px;
+  }
+
+  .about-text p {
+    font-size: 16px;
+  }
+
+  .about-images {
+    width: 40%;
+    height: 320px;
+  }
+
+  .img.top {
+    width: 110px;
+    height: 110px;
+    right: 30px;
+  }
+
+  .img.middle {
+    width: 160px;
+    height: 160px;
+  }
+
+  .img.bottom {
+    width: 120px;
+    height: 120px;
+    right: 50px;
+  }
+
+  /* ================= FIND US ================= */
+  .find-container {
+    gap: 30px;
+  }
+
+  .map {
+    height: 300px;
+  }
+
+  .find-text h2 {
+    font-size: 28px;
+  }
+
+  /* ================= SERVICES ================= */
+  .services-container {
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .service-item {
+    width: 30%;
+  }
+
+  /* ================= FOOTER ================= */
+  .footer {
+    padding: 60px 60px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    color: #f5efe6;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .logonav {
+    order: 2;
+  }
+
+  .search {
+    width: 140px;
+    margin-top: 10px;
+    margin-left: 10px;
+    order: 1;
+  }
+
+  .search input {
+    height: 30px;
+    font-size: 12px;
+    padding-left: 28px;
+  }
+
+  .search i {
+    left: 8px;
+    font-size: 12px;
+  }
+
+  .menu {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #e74c3c;
+    width: 200px;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: 0.3s;
+    order: 4;
+  }
+
+  .menu.active {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  #hamburger {
+    display: block;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    order: 3;
+  }
+
+  .about {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .about-text {
+    width: 100%;
+  }
+
+  .about-text h1 {
+    font-size: 42px; /* dari 70 → biar gak teriak */
+  }
+
+  .about-text p {
+    font-size: 14px;
+  }
+
+  .about-images {
+    width: 100%;
+    height: 250px;
+  }
+
+  .img {
+    position: relative;
+    margin: 10px;
+  }
+
+  .img.top,
+  .img.middle,
+  .img.bottom {
+    position: static;
+    width: 100px;
+    height: 100px;
+  }
+
+  .find-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .map {
+    width: 100%;
+    height: 250px;
+  }
+
+  .find-text {
+    width: 100%;
+  }
+
+  .find-text h2 {
+    font-size: 24px;
+  }
+
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .service-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .service-item img,
+  .wa-icon {
+    width: 90px;
+    height: 90px;
+  }
+
+  .wa-icon i {
+    font-size: 40px;
+  }
+}

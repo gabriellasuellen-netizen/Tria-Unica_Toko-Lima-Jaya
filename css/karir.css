@@ -1,0 +1,553 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f5efe6;
+  padding-top: 70px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #e74c3c;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  height: 70px;
+  gap: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.logonav {
+  color: #f5efe6;
+  font-family: "Great Vibes", cursive;
+  font-size: 30px;
+}
+/* SEARCH */
+.search {
+  position: relative;
+  width: 380px;
+  margin-left: 50px;
+}
+
+.search input {
+  width: 100%;
+  height: 38px;
+  border: none;
+  border-radius: 4px;
+  background: #f5efe6;
+  padding-left: 40px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* placeholder */
+.search input::placeholder {
+  color: #e74c3c;
+}
+
+/* icon */
+.search i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #e74c3c;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+  margin-left: 300px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #f5efe6;
+  font-weight: 500;
+}
+
+.menu a.active {
+  color: #1f3c88;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.menu a:hover {
+  color: #1f3c88;
+}
+
+.hamburger {
+  display: none;
+}
+
+.career-hero {
+  position: relative;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("../Hero-img/Toko\ Lima\ Jaya.jpeg");
+
+  background-size: cover;
+  background-position: center;
+
+  overflow: hidden;
+}
+
+.career-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.career-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 700px;
+  padding: 20px;
+}
+
+.career-content h1 {
+  font-size: 60px;
+  color: #f5efe6;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.career-content .brand {
+  font-family: "Great Vibes", cursive;
+  color: #e74c3c;
+  font-size: 100px;
+  font-weight: normal;
+}
+
+.career-content p {
+  color: #f5efe6;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.career-btn {
+  display: inline-block;
+
+  padding: 14px 30px;
+  border-radius: 30px;
+
+  background: #e74c3c;
+  color: #f5efe6;
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+
+.career-btn:hover {
+  background: #1f3c88;
+  transform: translateY(-4px);
+}
+
+/* LOWONGAN */
+.jobs {
+  padding: 100px 80px;
+  background: #f5efe6;
+}
+
+.jobs-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.jobs-title h2 {
+  color: #1f3c88;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.jobs-title p {
+  color: #555;
+}
+
+/* wrapper */
+.jobs-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* card */
+.job-card {
+  background: #fff;
+
+  padding: 35px;
+  border-radius: 25px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+.job-card:hover {
+  transform: translateY(-8px);
+}
+
+/* title */
+.job-card h3 {
+  color: #e74c3c;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+/* list */
+.job-card ul {
+  padding-left: 20px;
+  margin-bottom: 35px;
+}
+
+.job-card li {
+  margin-bottom: 12px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* button */
+.job-btn {
+  display: inline-block;
+
+  padding: 12px 24px;
+  border-radius: 30px;
+
+  background: #1f3c88;
+  color: #f5efe6;
+
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.job-btn:hover {
+  background: #e74c3c;
+}
+
+/* FORM */
+.apply {
+  padding: 100px 20px;
+  background: #fff;
+}
+
+.apply-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.apply-title h2 {
+  color: #1f3c88;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+
+.apply-title p {
+  color: #666;
+}
+
+#applyForm {
+  max-width: 700px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#applyForm input,
+#applyForm textarea {
+  padding: 15px 20px;
+
+  border: 2px solid #ddd;
+  border-radius: 16px;
+
+  outline: none;
+
+  font-size: 15px;
+}
+
+#applyForm textarea {
+  min-height: 140px;
+  resize: none;
+}
+
+#applyForm button {
+  padding: 15px;
+
+  border: none;
+  border-radius: 30px;
+
+  background: #e74c3c;
+  color: white;
+
+  cursor: pointer;
+  transition: 0.3s;
+
+  font-size: 15px;
+}
+
+#applyForm button:hover {
+  background: #1f3c88;
+}
+
+/* Spacer */
+.spacer {
+  height: 100px;
+  background: #f5efe6;
+}
+
+/* Footer */
+.footer {
+  background: #e74c3c;
+  color: white;
+  padding: 70px 120px;
+}
+
+/* GRID utama */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  gap: 60px;
+}
+/* kolom */
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+}
+
+.col li:hover {
+  color: #1f3c88;
+}
+
+/* logo */
+.logo {
+  font-family: "Great Vibes", cursive;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+/* top section */
+.top h3 {
+  margin-bottom: 10px;
+}
+
+.top ul {
+  list-style: none;
+}
+
+.top li {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.top a {
+  text-decoration: none;
+  color: #f5efe6;
+}
+
+.top a:hover {
+  text-decoration: none;
+  color: #1f3c88;
+}
+
+/* bottom section */
+.bottom h3 {
+  margin-bottom: 10px;
+}
+
+.bottom p {
+  font-size: 14px;
+  max-width: 250px;
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 1024px) {
+  .menu {
+    margin-left: 100px;
+    gap: 15px;
+  }
+
+  .career-content {
+    padding: 20px 40px;
+  }
+
+  .career-content h1 {
+    font-size: 48px;
+  }
+
+  .career-content .brand {
+    font-size: 80px;
+  }
+
+  .career-content p {
+    font-size: 15px;
+  }
+
+  .jobs {
+    padding: 80px 40px;
+  }
+
+  .jobs-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer {
+    padding: 60px 60px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 65px;
+  }
+
+  .hamburger {
+    display: block;
+    color: #f5efe6;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .logonav {
+    order: 2;
+  }
+
+  .search {
+    width: 140px;
+    margin-top: 10px;
+    margin-left: 10px;
+    order: 1;
+  }
+
+  .search input {
+    height: 30px;
+    font-size: 12px;
+    padding-left: 28px;
+  }
+
+  .search i {
+    left: 8px;
+    font-size: 12px;
+  }
+
+  .menu {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #e74c3c;
+    width: 200px;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: 0.3s;
+    order: 4;
+  }
+
+  .menu.active {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  #hamburger {
+    display: block;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    order: 3;
+  }
+
+  .career-hero {
+    height: 90vh;
+    padding: 20px;
+  }
+
+  .career-content {
+    padding: 10px;
+  }
+
+  .career-content h1 {
+    font-size: 38px;
+    line-height: 1.3;
+  }
+
+  .career-content .brand {
+    display: block;
+    font-size: 62px;
+    margin-top: 5px;
+  }
+
+  .career-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  .career-btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .jobs {
+    padding: 70px 20px;
+  }
+
+  .jobs-title h2 {
+    font-size: 24px;
+  }
+
+  .jobs-container {
+    grid-template-columns: 1fr;
+  }
+
+  .job-card {
+    padding: 28px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

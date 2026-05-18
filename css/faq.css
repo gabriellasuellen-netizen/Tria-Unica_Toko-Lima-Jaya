@@ -1,0 +1,408 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f5efe6;
+  padding-top: 70px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #e74c3c;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  height: 70px;
+  gap: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.logonav {
+  color: #f5efe6;
+  font-family: "Great Vibes", cursive;
+  font-size: 30px;
+}
+/* SEARCH */
+.search {
+  position: relative;
+  width: 380px;
+  margin-left: 50px;
+}
+
+.search input {
+  width: 100%;
+  height: 38px;
+  border: none;
+  border-radius: 4px;
+  background: #f5efe6;
+  padding-left: 40px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* placeholder */
+.search input::placeholder {
+  color: #e74c3c;
+}
+
+/* icon */
+.search i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #e74c3c;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+  margin-left: 300px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #f5efe6;
+  font-weight: 500;
+}
+
+.menu a.active {
+  color: #1f3c88;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.menu a:hover {
+  color: #1f3c88;
+}
+
+.hamburger {
+  display: none;
+}
+
+/* HERO */
+.faq-hero {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("../Hero-img/Toko\ Lima\ Jaya.jpeg");
+  color: #f5efe6;
+
+  text-align: center;
+
+  padding: 140px 20px 100px;
+}
+
+.faq-hero h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.faq-hero p {
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+/* FAQ */
+.faq-section {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+/* item */
+.faq-item {
+  background: white;
+
+  border-radius: 20px;
+
+  margin-bottom: 20px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* pertanyaan */
+.faq-question {
+  width: 100%;
+
+  padding: 25px;
+
+  border: none;
+  background: #fff;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  color: #1f3c88;
+}
+
+/* jawaban */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+
+  transition: 0.4s ease;
+
+  background: #fff;
+}
+
+.faq-answer p {
+  padding: 0 25px 25px;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* drop down aktif */
+.faq-item.active .faq-answer {
+  max-height: 300px;
+}
+
+.faq-item.active i {
+  transform: rotate(180deg);
+}
+
+.faq-question i {
+  transition: 0.3s;
+}
+
+.faq-contact {
+  text-align: center;
+  margin-top: 70px;
+}
+
+.faq-contact h3 {
+  color: #1f3c88;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.faq-contact p {
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 28px;
+  border-radius: 30px;
+
+  background: #25d366;
+  color: white;
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  transform: translateY(-4px);
+}
+
+/* Footer */
+.footer {
+  background: #e74c3c;
+  color: white;
+  padding: 70px 120px;
+}
+
+/* GRID utama */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  gap: 60px;
+}
+/* kolom */
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+}
+
+.col li:hover {
+  color: #1f3c88;
+}
+
+/* logo */
+.logo {
+  font-family: "Great Vibes", cursive;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+/* top section */
+.top h3 {
+  margin-bottom: 10px;
+}
+
+.top ul {
+  list-style: none;
+}
+
+.top li {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.top a {
+  text-decoration: none;
+  color: #f5efe6;
+}
+
+.top a:hover {
+  text-decoration: none;
+  color: #1f3c88;
+}
+
+/* bottom section */
+.bottom h3 {
+  margin-bottom: 10px;
+}
+
+.bottom p {
+  font-size: 14px;
+  max-width: 250px;
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 1024px) {
+  .menu {
+    margin-left: 100px;
+    gap: 15px;
+  }
+
+  .faq-section {
+    padding: 80px 30px;
+  }
+
+  .footer {
+    padding: 60px 60px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    color: #f5efe6;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .logonav {
+    order: 2;
+  }
+
+  .search {
+    width: 140px;
+    margin-top: 10px;
+    margin-left: 10px;
+    order: 1;
+  }
+
+  .search input {
+    height: 30px;
+    font-size: 12px;
+    padding-left: 28px;
+  }
+
+  .search i {
+    left: 8px;
+    font-size: 12px;
+  }
+
+  .menu {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #e74c3c;
+    width: 200px;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: 0.3s;
+    order: 4;
+  }
+
+  .menu.active {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  #hamburger {
+    display: block;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    order: 3;
+  }
+
+  .faq-section {
+    padding: 70px 20px;
+  }
+
+  .faq-title h2 {
+    font-size: 24px;
+  }
+
+  .faq-question {
+    font-size: 14px;
+    padding: 18px 20px;
+  }
+
+  .faq-answer p {
+    font-size: 13px;
+    padding: 0 20px 20px;
+  }
+
+  .faq-contact h3 {
+    font-size: 22px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
