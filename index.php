@@ -17,26 +17,6 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_bag_speed"
     />
-    <style>
-      .material-symbols-outlined {
-        font-variation-settings:
-          "FILL" 0,
-          "wght" 1000,
-          "GRAD" 0,
-          "opsz" 1000;
-      }
-
-      .material-symbols-outlined {
-        color: #e74c3c;
-      }
-
-      .material-symbols-outlined:hover {
-        color: #fff;
-        padding: 10px;
-        border-radius: 100%;
-        background: #e74c3c;
-      }
-    </style>
   </head>
 
   <body>
