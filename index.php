@@ -1,4 +1,7 @@
-  <body>
+<?php
+include "header.php";
+?>
+<body>
     <!-- NAVBAR -->
     <div class="navbar">
       <div class="logonav">Lima Jaya</div>
