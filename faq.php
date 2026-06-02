@@ -16,10 +16,10 @@ include "header.php";
       </div>
 
       <div class="menu" id="menu">
-        <a href="index.html">BERANDA</a>
-        <a href="produk.html">PRODUK</a>
-        <a href="tentang.html">TENTANG KAMI</a>
-        <a href="karir.html">KARIR</a>
+        <a href="index.php">BERANDA</a>
+        <a href="produk.php">PRODUK</a>
+        <a href="tentang.php">TENTANG KAMI</a>
+        <a href="karir.php">KARIR</a>
         <a href="#" class="active">FAQ</a>
       </div>
 
@@ -110,9 +110,9 @@ include "header.php";
           <div class="top">
             <h3>PERUSAHAAN</h3>
             <ul>
-              <li><a href="tentang.html">Tentang kami</a></li>
-              <li><a href="produk.html">Produk</a></li>
-              <li><a href="karir.html">Karir</a></li>
+              <li><a href="tentang.php">Tentang kami</a></li>
+              <li><a href="produk.php">Produk</a></li>
+              <li><a href="karir.php">Karir</a></li>
             </ul>
           </div>
           <div class="bottom">
@@ -130,7 +130,7 @@ include "header.php";
             <h3>LAYANAN</h3>
             <ul>
               <li>Hubungi Kami</li>
-              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="faq.php">FAQ</a></li>
             </ul>
           </div>
         </div>
@@ -140,8 +140,8 @@ include "header.php";
           <div class="top">
             <h3>FITUR</h3>
             <ul>
-              <li><a href="produk.html">Kategori</a></li>
-              <li><a href="produk.html">Produk Terlaris</a></li>
+              <li><a href="produk.php">Kategori</a></li>
+              <li><a href="produk.php">Produk Terlaris</a></li>
             </ul>
           </div>
           <div class="bottom">
