@@ -22,11 +22,11 @@
       </div>
 
       <div class="menu" id="menu">
-        <a href="index.html">BERANDA</a>
+        <a href="index.php">BERANDA</a>
         <a href="#" class="active">PRODUK</a>
-        <a href="tentang.html">TENTANG KAMI</a>
-        <a href="karir.html">KARIR</a>
-        <a href="faq.html">FAQ</a>
+        <a href="tentang.php">TENTANG KAMI</a>
+        <a href="karir.php">KARIR</a>
+        <a href="faq.php">FAQ</a>
       </div>
 
       <!-- hamburger -->
