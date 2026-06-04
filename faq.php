@@ -2,33 +2,6 @@
 include "header.php";
 ?>
   <body>
-    <!-- NAVBAR -->
-    <div class="navbar">
-      <div class="logonav">Lima Jaya</div>
-
-      <div class="search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Cari kategori atau produk"
-        />
-      </div>
-
-      <div class="menu" id="menu">
-        <a href="index.php">BERANDA</a>
-        <a href="produk.php">PRODUK</a>
-        <a href="tentang.php">TENTANG KAMI</a>
-        <a href="karir.php">KARIR</a>
-        <a href="#" class="active">FAQ</a>
-      </div>
-
-      <!-- hamburger -->
-      <div class="hamburger" id="hamburger">
-        <i class="fa-solid fa-bars"></i>
-      </div>
-    </div>
-
     <section class="faq-hero">
       <h1>FAQ</h1>
       <p>Temukan jawaban dari pertanyaan yang sering ditanyakan pelanggan.</p>
