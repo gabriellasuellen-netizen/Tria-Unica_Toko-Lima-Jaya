@@ -98,6 +98,8 @@ include "header.php";
       <!-- isi posisi otomatis sesuai dengan dimana posisi diklik -->
       <input type="text" id="posisi" readonly />
 
+      <input type="file" name="cv" accept=".pdf" required>
+
       <textarea
         id="tentang"
         placeholder="Ceritakan tentang diri Anda"
