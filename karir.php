@@ -85,20 +85,27 @@ include "header.php";
     </div>
 
     <form id="applyForm">
-      <input type="text" id="nama" placeholder="Nama Lengkap" required />
+      <label for="nama">Nama Lengkap</label>
+      <input type="text" id="nama" placeholder="Masukkan nama sesuai KTP" required />
 
-      <input type="date" id="tgllahir" placeholder="Tanggal Lahir" required />
+      <label for="tgllahir">Tanggal Lahir</label>
+      <input type="date" id="tgllahir" required />
 
-      <input type="text" id="alamat" placeholder="Alamat" required />
+      <label for="alamat">Alamat</label>
+      <input type="text" id="alamat" placeholder="Alamat tempat tinggal" required />
 
-      <input type="tel" id="telepon" placeholder="Nomor WhatsApp" required />
+      <label for="telepon">Nomor</label>
+      <input type="tel" id="telepon" placeholder="Masukkan nomor HP/WhatsApp" required />
 
-      <input type="email" id="email" placeholder="Email" required />
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Masukkan alamat email" required />
 
       <!-- isi posisi otomatis sesuai dengan dimana posisi diklik -->
+      <label for="posisi">Posisi yang dipilih</label>
       <input type="text" id="posisi" readonly />
 
-      <input type="file" name="cv" accept=".pdf" required>
+      <label for="cv">Upload CV</label>
+      <input type="file" name="cv" accept=".pdf" placeholder="Upload CV" required>
 
       <textarea
         id="tentang"
