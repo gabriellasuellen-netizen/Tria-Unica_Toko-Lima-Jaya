@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("../Hero-img/Toko Lima Jaya.jpeg");
+
+  background-size: cover;
+  background-position: center;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+form {
+  width: 100%;
+  max-width: 400px;
+
+  background: rgba(245, 239, 230, 0.97);
+
+  padding: 40px;
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+form h2 {
+  text-align: center;
+  color: #1f3c88;
+  margin-bottom: 10px;
+}
+
+form::before {
+  content: "Lima Jaya";
+  font-family: "Great Vibes", cursive;
+  font-size: 48px;
+  color: #e74c3c;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+
+  border: 2px solid #ddd;
+  border-radius: 12px;
+
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #e74c3c;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+button {
+  padding: 14px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #e74c3c;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #1f3c88;
+}
+
+@media (max-width: 768px) {
+  form {
+    padding: 30px 25px;
+  }
+
+  form::before {
+    font-size: 40px;
+  }
+}
