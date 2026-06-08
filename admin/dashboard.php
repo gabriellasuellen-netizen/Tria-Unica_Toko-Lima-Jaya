@@ -1,8 +1,8 @@
 <?php
 session_start();
-include "security.php";
+
 //Cek login admin
-if (!isset($_SESSION['admin'])) {
+if (!isset($_SESSION['username'])) {
   header("Location: ../login.php");
   exit;
 }
@@ -28,31 +28,6 @@ if (!isset($_SESSION['admin'])) {
       <li><a href="logout.php">Logout</a></li>
     </ul>
   </div>
-
-  <div class="content">
-    <h1>DASHBOARD ADMIN</h1>
-    <br>
-
-    <div class="card-container">
-
-      <div class="card">
-        <h3>Data Produk</h3>
-        <p>Tambah, ubah, dan hapus produk
-        <p>
-      </div>
-
-      <div class="card">
-        <h3>Lowongan Kerja</h3>
-        <p>Kelola daftar lowongan perkerjaan
-        <p>
-      </div>
-
-      <div class="card">
-        <h3>Data Pelamar</h3>
-        <p>Lihat seluruh pelamar yang mendaftar
-        <p>
-      </div>
-    </div>
 
 </body>
 
