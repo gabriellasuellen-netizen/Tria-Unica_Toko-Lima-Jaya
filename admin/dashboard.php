@@ -3,7 +3,7 @@ session_start();
 
 //Cek login admin
 if (!isset($_SESSION['admin'])) {
-  header("Location: login.php');
+  header("Location: login.php");
   exit;
 }
 ?>
@@ -15,7 +15,7 @@ if (!isset($_SESSION['admin'])) {
 </head>
 <body>
 
-<div class="sidebar"
+<div class="sidebar">
     <h2>ADMIN PANEL</h2>
   
     <ul>
