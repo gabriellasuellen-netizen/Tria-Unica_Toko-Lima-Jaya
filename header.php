@@ -1,5 +1,5 @@
 <?php
-$base = "/Tria-Unica_Toko-Lima-Jaya";
+$base = "/Project Web_Toko Lima Jaya";
 $currentPage = basename($_SERVER['PHP_SELF'], ".php");
 
 $titles = [
