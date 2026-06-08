@@ -21,8 +21,8 @@ if (!isset($_SESSION['admin'])) {
     <ul>
       <li><a href="dashboard.php">Dashboard</a></li>
       <li><a href="produk/index.php">Kelola Produk</a></li>
-      <li><a href="lowongan/index.php>Kelola Lowongan</a></li>
-      <li><a href="pelamar/index.php>Data Pelamar</a></li>
+      <li><a href="lowongan/index.php">Kelola Lowongan</a></li>
+      <li><a href="pelamar/index.php">Data Pelamar</a></li>
       <li><a href="logout.php">Logout</a></li>
     </ul>
 </div>
