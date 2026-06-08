@@ -1,22 +1,25 @@
 <?php
 session_start();
+include "security.php";
 //Cek login admin
 if (!isset($_SESSION['admin'])) {
-  header("Location: login.php");
+  header("Location: ../login.php");
   exit;
 }
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Dashboard Admin</title>
 </head>
+
 <body>
 
-<div class="sidebar">
+  <div class="sidebar">
     <h2>ADMIN PANEL</h2>
-  
+
     <ul>
       <li><a href="dashboard.php">Dashboard</a></li>
       <li><a href="produk/index.php">Kelola Produk</a></li>
@@ -24,29 +27,33 @@ if (!isset($_SESSION['admin'])) {
       <li><a href="pelamar/index.php">Data Pelamar</a></li>
       <li><a href="logout.php">Logout</a></li>
     </ul>
-</div>
+  </div>
 
-<div class="content">
+  <div class="content">
     <h1>DASHBOARD ADMIN</h1>
     <br>
 
     <div class="card-container">
 
       <div class="card">
-          <h3>Data Produk</h3>
-          <p>Tambah, ubah, dan hapus produk<p>
+        <h3>Data Produk</h3>
+        <p>Tambah, ubah, dan hapus produk
+        <p>
       </div>
 
       <div class="card">
-          <h3>Lowongan Kerja</h3>
-          <p>Kelola daftar lowongan perkerjaan<p>
+        <h3>Lowongan Kerja</h3>
+        <p>Kelola daftar lowongan perkerjaan
+        <p>
       </div>
-    
+
       <div class="card">
-          <h3>Data Pelamar</h3>
-          <p>Lihat seluruh pelamar yang mendaftar<p>
+        <h3>Data Pelamar</h3>
+        <p>Lihat seluruh pelamar yang mendaftar
+        <p>
       </div>
-</div>
+    </div>
 
 </body>
+
 </html>
