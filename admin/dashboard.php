@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 //Cek login admin
 if (!isset($_SESSION['admin'])) {
   header("Location: login.php");
