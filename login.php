@@ -13,7 +13,9 @@
     rel="stylesheet">
 </head>
 
-<body>
+<body style="background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url('img/Hero-img/Toko\ Lima\ Jaya.jpeg');">
   <section>
     <form action="sv_login.php" method="post">
       <input type="text" placeholder="username" name="username">

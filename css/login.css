@@ -11,11 +11,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url("../Hero-img/Toko Lima Jaya.jpeg");
-
   background-size: cover;
   background-position: center;
 }
