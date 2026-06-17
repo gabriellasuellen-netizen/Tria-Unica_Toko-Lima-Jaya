@@ -13,7 +13,7 @@ include "header.php";
       </div>
 
       <div class="hero-right">
-        <img src="Hero-img/Toko Lima Jaya.jpeg" alt="store" />
+        <img src="img/Hero-img/Toko Lima Jaya.jpeg" alt="store" />
 
         <div class="wa-container">
           <p class="wa-text">Hubungi kami untuk memesan produk!</p>
@@ -88,7 +88,7 @@ include "header.php";
     <div class="product-wrapper">
       <!-- CARD 1 -->
       <div class="card">
-        <img src="Produk-img/Bahan Kue & Masakan/masako.jpeg" alt="product" />
+        <img src="img/Produk-img/Bahan Kue & Masakan/masako.jpeg" alt="product" />
 
         <div class="card-body">
           <div class="title">
@@ -101,7 +101,7 @@ include "header.php";
       <!-- CARD 2 -->
       <div class="card">
         <img
-          src="Produk-img/Kebutuhan Rumah Tangga/mamalemon.jpeg"
+          src="img/Produk-img/Kebutuhan Rumah Tangga/mamalemon.jpeg"
           alt="product" />
 
         <div class="card-body">
@@ -115,7 +115,7 @@ include "header.php";
       <!-- CARD 3 -->
       <div class="card">
         <img
-          src="Produk-img/Sepeda & Aksesorisnya/bmxsepeda.jpeg"
+          src="img/Produk-img/Sepeda & Aksesorisnya/bmxsepeda.jpeg"
           alt="product" />
 
         <div class="card-body">
@@ -139,15 +139,15 @@ include "header.php";
     <div class="carousel">
       <div class="track">
         <div class="slide active">
-          <img src="Galeri-img/1.jpeg" />
+          <img src="img/Galeri-img/1.jpeg" />
         </div>
 
         <div class="slide">
-          <img src="Galeri-img/2.jpeg" />
+          <img src="img/Galeri-img/2.jpeg" />
         </div>
 
         <div class="slide">
-          <img src="Galeri-img/3.jpeg" />
+          <img src="img/Galeri-img/3.jpeg" />
         </div>
       </div>
     </div>

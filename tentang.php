@@ -3,7 +3,7 @@ include "header.php";
 ?>
 
 <body>
-  <section class="about">
+  <section class="about" style="background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/Hero-img/Toko\ Lima\ Jaya.jpeg') center/cover no-repeat;">
     <div class="overlay"></div>
 
     <div class="about-container">
@@ -35,11 +35,11 @@ include "header.php";
       <!-- kanan  -->
       <div class="about-images">
         <img
-          src="Produk-img/Bahan Kue & Masakan/argapura.jpeg"
+          src="img/Produk-img/Bahan Kue & Masakan/argapura.jpeg"
           class="img top" />
-        <img src="Produk-img/Minuman/ultramilk.jpeg" class="img middle" />
+        <img src="img/Produk-img/Minuman/ultramilk.jpeg" class="img middle" />
         <img
-          src="Produk-img/Alat Tulis & Kantor/montanagelinkpen.jpeg"
+          src="img/Produk-img/Alat Tulis & Kantor/montanagelinkpen.jpeg"
           class="img bottom" />
       </div>
     </div>
@@ -81,7 +81,7 @@ include "header.php";
     <div class="services-container">
       <!-- item 1 -->
       <div class="service-item">
-        <img src="Galeri-img/services.jpeg" />
+        <img src="img/Galeri-img/services.jpeg" />
         <p>LANGSUNG DI TOKO</p>
       </div>
 
@@ -101,7 +101,7 @@ include "header.php";
 
       <!-- item 3 -->
       <div class="service-item">
-        <img src="Galeri-img/delivery.jpg" />
+        <img src="img/Galeri-img/delivery.jpg" />
         <p>PESAN-ANTAR</p>
       </div>
     </div>

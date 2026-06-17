@@ -94,7 +94,6 @@ html {
 .about {
   position: relative;
   height: 100vh;
-  background: url("../Hero-img/Toko\ Lima\ Jaya.jpeg") center/cover no-repeat;
   display: flex;
   align-items: center;
 }
