@@ -1,5 +1,13 @@
 <?php
+session_start();
 include "header.php";
+include "koneksi.php";
+
+$errors = $_SESSION['errors'] ?? [];
+$success = $_SESSION['success'] ?? false;
+
+unset($_SESSION['errors']);
+unset($_SESSION['success']);
 ?>
 
 <body>
@@ -86,38 +94,17 @@ include "header.php";
       <p>Lengkapi data diri Anda di bawah ini.</p>
     </div>
 
-    <form id="applyForm">
-      <label for="nama">Nama Lengkap</label>
-      <input type="text" id="nama" placeholder="Masukkan nama sesuai KTP" required />
+    <?php if (!empty($errors)): ?>
+      <?php foreach ($errors as $error): ?>
+        <div class="error"><?= htmlspecialchars($error) ?></div>
+      <?php endforeach; ?>
+    <?php endif; ?>
 
-      <label for="tgllahir">Tanggal Lahir</label>
-      <input type="date" id="tgllahir" required />
+    <?php if ($success): ?>
+      <div class="success">Pendaftaran berhasil.</div>
+    <?php endif; ?>
 
-      <label for="alamat">Alamat</label>
-      <input type="text" id="alamat" placeholder="Alamat tempat tinggal" required />
-
-      <label for="telepon">Nomor</label>
-      <input type="tel" id="telepon" placeholder="Masukkan nomor HP/WhatsApp" required />
-
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Masukkan alamat email" required />
-
-      <!-- isi posisi otomatis sesuai dengan dimana posisi diklik -->
-      <label for="posisi">Posisi</label>
-
-      <select id="posisi" name="posisi" required>
-        <option value="">-- Pilih Posisi --</option>
-        <option value="Kasir">Kasir</option>
-        <option value="Pramuniaga">Pramuniaga</option>
-        <option value="Staff Gudang">Staff Gudang</option>
-      </select>
-
-      <textarea
-        id="tentang"
-        placeholder="Ceritakan tentang diri Anda"
-        required></textarea>
-
-      <button type="submit">Kirim Lamaran</button>
+    <?php include "frm_pelamar.php"; ?>
     </form>
   </section>
 

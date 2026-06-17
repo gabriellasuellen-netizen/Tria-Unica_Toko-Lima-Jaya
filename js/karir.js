@@ -62,10 +62,5 @@ document.addEventListener("DOMContentLoaded", () => {
     Tentang Saya:
     ${tentang}`;
 
-    const nomorWA = "62895620130261";
-
-    const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
-
-    window.open(url, "_blank");
   });
 });
