@@ -3,7 +3,9 @@ include "header.php";
 ?>
 
 <body>
-  <section class="career-hero">
+  <section class="career-hero" style="background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url('img/Hero-img/Toko\ Lima\ Jaya.jpeg');">
     <div class="career-overlay"></div>
 
     <div class="career-content">
@@ -101,11 +103,14 @@ include "header.php";
       <input type="email" id="email" placeholder="Masukkan alamat email" required />
 
       <!-- isi posisi otomatis sesuai dengan dimana posisi diklik -->
-      <label for="posisi">Posisi yang dipilih</label>
-      <input type="text" id="posisi" readonly />
+      <label for="posisi">Posisi</label>
 
-      <label for="cv">Upload CV</label>
-      <input type="file" name="cv" accept=".pdf" placeholder="Upload CV" required>
+      <select id="posisi" name="posisi" required>
+        <option value="">-- Pilih Posisi --</option>
+        <option value="Kasir">Kasir</option>
+        <option value="Pramuniaga">Pramuniaga</option>
+        <option value="Staff Gudang">Staff Gudang</option>
+      </select>
 
       <textarea
         id="tentang"

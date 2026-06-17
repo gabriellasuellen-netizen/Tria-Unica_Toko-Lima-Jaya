@@ -65,46 +65,45 @@ $cssFiles = [
     "faq"     => "faq"
   ];
   ?>
-    <div class="navbar">
-      <div class="logonav">Lima Jaya</div>
+  <div class="navbar">
+    <div class="logonav">Lima Jaya</div>
 
-      <div class="search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Cari kategori atau produk">
-      </div>
-
-      <div class="menu" id="menu">
-        <a href="<?= $base ?>/index.php"
-          class="<?= $currentPage == 'index' ? 'active' : '' ?>">
-          BERANDA
-        </a>
-
-        <a href="<?= $base ?>/produk.php"
-          class="<?= $currentPage == 'produk' ? 'active' : '' ?>">
-          PRODUK
-        </a>
-
-        <a href="<?= $base ?>/tentang.php"
-          class="<?= $currentPage == 'tentang' ? 'active' : '' ?>">
-          TENTANG KAMI
-        </a>
-
-        <a href="<?= $base ?>/karir.php"
-          class="<?= $currentPage == 'karir' ? 'active' : '' ?>">
-          KARIR
-        </a>
-
-        <a href="<?= $base ?>/faq.php"
-          class="<?= $currentPage == 'faq' ? 'active' : '' ?>">
-          FAQ
-        </a>
-      </div>
-
-      <div class="hamburger" id="hamburger">
-        <i class="fa-solid fa-bars"></i>
-      </div>
+    <div class="search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Cari kategori atau produk">
     </div>
-  </body>
+
+    <div class="menu" id="menu">
+      <a href="<?= $base ?>/index.php"
+        class="<?= $currentPage == 'index' ? 'active' : '' ?>">
+        BERANDA
+      </a>
+
+      <a href="<?= $base ?>/produk.php"
+        class="<?= $currentPage == 'produk' ? 'active' : '' ?>">
+        PRODUK
+      </a>
+
+      <a href="<?= $base ?>/tentang.php"
+        class="<?= $currentPage == 'tentang' ? 'active' : '' ?>">
+        TENTANG KAMI
+      </a>
+
+      <a href="<?= $base ?>/karir.php"
+        class="<?= $currentPage == 'karir' ? 'active' : '' ?>">
+        KARIR
+      </a>
+
+      <a href="<?= $base ?>/faq.php"
+        class="<?= $currentPage == 'faq' ? 'active' : '' ?>">
+        FAQ
+      </a>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </div>
