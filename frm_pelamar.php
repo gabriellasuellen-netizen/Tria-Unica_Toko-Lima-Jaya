@@ -5,8 +5,8 @@ include "koneksi.php";
     <label for="nama">Nama Lengkap</label>
     <input type="text" name="nama" id="nama" placeholder="Masukkan nama sesuai KTP" required />
 
-    <label for="tgllahir">Tanggal Lahir</label>
-    <input type="date" name="tanggal_lahir" id="tgllahir" required />
+    <label for="tanggal_lahir">Tanggal Lahir</label>
+    <input type="date" name="tanggal_lahir" id="tanggal_lahir" required />
 
     <label for="alamat">Alamat</label>
     <input type="text" name="alamat" id="alamat" placeholder="Alamat tempat tinggal" required />
@@ -45,3 +45,4 @@ include "koneksi.php";
         required></textarea>
 
     <button type="submit">Kirim Lamaran</button>
+</form>

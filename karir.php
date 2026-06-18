@@ -105,7 +105,6 @@ unset($_SESSION['success']);
     <?php endif; ?>
 
     <?php include "frm_pelamar.php"; ?>
-    </form>
   </section>
 
   <div class="spacer"></div>

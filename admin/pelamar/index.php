@@ -11,7 +11,13 @@ if (!isset($_SESSION['username'])) {
 
 
 // mengambil data pelamar
-$sql = "SELECT * FROM pelamar ORDER BY id_pelamar DESC";
+$sql = "SELECT 
+    pelamar.*,
+    lowongan.nama_lowongan
+FROM pelamar
+LEFT JOIN lowongan 
+ON pelamar.id_lowongan = lowongan.id_lowongan
+ORDER BY pelamar.id_pelamar DESC";
 $query = mysqli_query($conn, $sql);
 
 ?>
@@ -66,7 +72,7 @@ $query = mysqli_query($conn, $sql);
                     <td><?= $data['alamat'] ?></td>
                     <td><?= $data['telepon'] ?></td>
                     <td><?= $data['email'] ?></td>
-                    <td><?= $data['posisi'] ?></td>
+                    <td><?= $data['nama_lowongan'] ?></td>
                     <td><?= $data['tentang_diri'] ?></td>
                 </tr>
 
