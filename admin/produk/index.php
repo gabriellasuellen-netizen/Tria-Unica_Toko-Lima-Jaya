@@ -8,7 +8,7 @@ if (!isset($_SESSION['username'])) {
     exit;
 }
 
-$sql = "SELECT * FROM lowongan ORDER BY id_lowongan DESC";
+$sql = "SELECT * FROM produk ORDER BY id_produk DESC";
 $query = mysqli_query($conn, $sql);
 
 ?>
@@ -17,7 +17,7 @@ $query = mysqli_query($conn, $sql);
 <html>
 
 <head>
-    <title>Kelola Lowongan</title>
+    <title>Kelola Produk</title>
     <link rel="stylesheet" href="../css/lowongan.css">
     <link
         rel="stylesheet"
@@ -33,10 +33,10 @@ $query = mysqli_query($conn, $sql);
 
     <div class="container">
 
-        <h1>Daftar Lowongan</h1>
+        <h1>Daftar Produk</h1>
 
         <a href="tambah.php" class="btn-tambah">
-            + Tambah Lowongan
+            + Tambah Produk
         </a>
 
 
@@ -44,79 +44,58 @@ $query = mysqli_query($conn, $sql);
 
             <tr>
                 <th>No</th>
-                <th>Posisi</th>
-                <th>Syarat</th>
-                <th>Status</th>
+                <th>Nama</th>
+                <th>Merek</th>
+                <th>Gambar</th>
+                <th>Kategori</th>
                 <th>Aksi</th>
             </tr>
 
 
             <?php
-
             $no = 1;
 
             while ($data = mysqli_fetch_assoc($query)) {
-
             ?>
 
                 <tr>
 
+                    <td><?= $no++; ?></td>
+
                     <td>
-                        <?= $no++; ?>
+                        <?= $data['nama']; ?>
                     </td>
 
-
                     <td>
-                        <?= $data['nama_lowongan']; ?>
+                        <?= $data['merek']; ?>
                     </td>
 
-
                     <td>
-
-                        <ul>
-
-                            <?php
-
-                            $syarat = explode("|", $data['syarat']);
-
-                            foreach ($syarat as $s) {
-
-                            ?>
-
-                                <li>
-                                    <?= $s; ?>
-                                </li>
-
-                            <?php } ?>
-
-                        </ul>
-
+                        <img
+                            src="../../img/Produk-img/<?= $data['gambar']; ?>"
+                            width="80">
                     </td>
 
-
                     <td>
-                        <?= $data['status']; ?>
+                        <?= $data['id_kategori']; ?>
                     </td>
 
                     <td>
 
                         <a class="btn-edit"
-                            href="edit.php?id=<?= $data['id_lowongan']; ?>">
+                            href="edit.php?id=<?= $data['id_produk']; ?>">
                             Edit
                         </a>
 
-
                         <a class="btn-hapus"
-                            href="hapus.php?id=<?= $data['id_lowongan']; ?>"
-                            onclick="return confirm('Yakin ingin menghapus lowongan ini?')">
+                            href="hapus.php?id=<?= $data['id_produk']; ?>"
+                            onclick="return confirm('Yakin ingin menghapus produk ini?')">
                             Hapus
                         </a>
 
                     </td>
 
-
                 </tr>
-
 
             <?php } ?>
 
