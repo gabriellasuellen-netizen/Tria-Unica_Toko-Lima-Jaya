@@ -3,62 +3,128 @@ include "../security.php";
 include "../../koneksi.php";
 
 if (isset($_POST['simpan'])) {
-    $posisi = trim($_POST['posisi']);
-    $syarat = trim($_POST['syarat']);
-    $status = trim($_POST['status']);
 
-    if ($posisi == '' || $syarat == '' || $status <= 0) {
-        $error = "Semua field wajib diisi dengan benar.";
+    $nama = trim($_POST['nama']);
+    $merek = trim($_POST['merek']);
+    $id_kategori = $_POST['id_kategori'];
+
+    if (
+        $nama == '' ||
+        $id_kategori == '' ||
+        empty($_FILES['gambar']['name'])
+    ) {
+
+        $error = "Semua field wajib diisi.";
     } else {
-        $sql = "insert into lowongan (nama_lowongan, syarat, status) values('$posisi', '$syarat', '$status')";
+
+        $gambar = $_FILES['gambar']['name'];
+        $tmp = $_FILES['gambar']['tmp_name'];
+
+        $queryKategori = mysqli_query(
+            $conn,
+            "SELECT * FROM kategori WHERE id_kategori='$id_kategori'"
+        );
+
+        $kategori = mysqli_fetch_assoc($queryKategori);
+
+        $folder = $kategori['nama_kategori'];
+
+        $folderUpload = "../../img/Produk-img/" . $folder;
+
+        if (!is_dir($folderUpload)) {
+            mkdir($folderUpload, 0777, true);
+        }
+
+        move_uploaded_file(
+            $tmp,
+            $folderUpload . "/" . $gambar
+        );
+
+        $pathDatabase = $folder . "/" . $gambar;
+
+        $sql = "INSERT INTO produk
+                (nama, merek, gambar, id_kategori)
+                VALUES
+                ('$nama', '$merek', '$pathDatabase', '$id_kategori')";
+
         $query = mysqli_query($conn, $sql);
 
         if ($query) {
+
             header("Location: index.php");
             exit;
         } else {
+
             $error = "Data gagal disimpan.";
         }
     }
 }
+
+$kategori = mysqli_query(
+    $conn,
+    "SELECT * FROM kategori ORDER BY nama_kategori ASC"
+);
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Tambah Lowongan</title>
-    <link rel="stylesheet" href="../css/tambah.css" />
+    <title>Tambah Produk</title>
+    <link rel="stylesheet" href="../css/tambah.css">
 </head>
 
 <body>
 
-    <h1>Tambah Lowongan</h1>
+    <h1>Tambah Produk</h1>
 
     <a href="index.php">Kembali</a>
 
     <br><br>
 
     <?php if (isset($error)) : ?>
-        <p style="color:red;"><?= $error; ?></p>
+        <p style="color:red;">
+            <?= $error; ?>
+        </p>
     <?php endif; ?>
 
-    <form method="POST">
-        <label>Posisi</label><br>
-        <input type="text" name="posisi">
+    <form method="POST" enctype="multipart/form-data">
+
+        <label>Nama Produk</label><br>
+        <input type="text" name="nama">
         <br><br>
 
-        <label>Syarat</label><br>
-        <textarea name="syarat" rows="5"></textarea>
+        <label>Merek</label><br>
+        <input type="text" name="merek">
         <br><br>
 
-        <label>Status</label><br>
-        <select name="status">
-            <option value="Aktif">Aktif</option>
-            <option value="Tidak Aktif">Nonaktif</option>
+        <label>Kategori</label><br>
+        <select name="id_kategori">
+
+            <option value="">
+                -- Pilih Kategori --
+            </option>
+
+            <?php while ($k = mysqli_fetch_assoc($kategori)) { ?>
+
+                <option value="<?= $k['id_kategori']; ?>">
+                    <?= $k['nama_kategori']; ?>
+                </option>
+
+            <?php } ?>
+
         </select>
 
-        <button type="submit" name="simpan">Simpan</button>
+        <br><br>
+
+        <label>Gambar</label><br>
+        <input type="file" name="gambar">
+        <br><br>
+
+        <button type="submit" name="simpan">
+            Simpan
+        </button>
+
     </form>
 
 </body>

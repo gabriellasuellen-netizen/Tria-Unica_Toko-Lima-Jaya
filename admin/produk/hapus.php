@@ -2,14 +2,14 @@
 include "../security.php";
 include "../../koneksi.php";
 
-$id_lowongan = $_GET['id'] ?? '';
+$id_produk = $_GET['id'] ?? '';
 
-if ($id_lowongan == '') {
+if ($id_produk == '') {
     header("Location: index.php");
     exit;
 }
 
-$sql = "delete from lowongan where id_lowongan='$id_lowongan'";
+$sql = "delete from produk where id_produk='$id_produk'";
 $query = mysqli_query($conn, $sql);
 
 if (!$query) {

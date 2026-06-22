@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #f5efe6;
+  background: #f5f6fa;
 }
 
 .dashboard {
@@ -60,11 +60,11 @@ body {
 }
 
 .menu-card.active h3 {
-  color: #f5efe6;
+  color: #f5f6fa;
 }
 
 .menu-card.active p {
-  color: #f5efe6;
+  color: #f5f6fa;
 }
 
 .logout h3 {

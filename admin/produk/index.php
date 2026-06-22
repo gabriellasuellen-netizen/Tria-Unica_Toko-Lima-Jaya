@@ -9,7 +9,13 @@ if (!isset($_SESSION['username'])) {
     exit;
 }
 
-$sql = "SELECT * FROM produk ORDER BY id_produk DESC";
+$sql = "SELECT 
+            produk.*,
+            kategori.nama_kategori
+        FROM produk
+        LEFT JOIN kategori
+        ON produk.id_kategori = kategori.id_kategori
+        ORDER BY produk.id_produk DESC";
 $query = mysqli_query($conn, $sql);
 
 ?>
@@ -79,7 +85,7 @@ $query = mysqli_query($conn, $sql);
                     </td>
 
                     <td>
-                        <?= $data['id_kategori']; ?>
+                        <?= $data['nama_kategori']; ?>
                     </td>
 
                     <td>
