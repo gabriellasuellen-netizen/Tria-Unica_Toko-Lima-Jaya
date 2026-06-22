@@ -24,6 +24,7 @@ if (!$data) {
 
 <head>
     <title>Edit Lowongan</title>
+    <link rel="stylesheet" href="../css/edit.css" />
 </head>
 
 <body>

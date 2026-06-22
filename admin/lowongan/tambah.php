@@ -28,7 +28,7 @@ if (isset($_POST['simpan'])) {
 
 <head>
     <title>Tambah Lowongan</title>
-    <link rel="stylesheet" href="lowongan.css" />
+    <link rel="stylesheet" href="../css/tambah.css" />
 </head>
 
 <body>
