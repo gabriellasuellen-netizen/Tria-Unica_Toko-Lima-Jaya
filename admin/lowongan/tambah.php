@@ -3,14 +3,14 @@ include "../security.php";
 include "../../koneksi.php";
 
 if (isset($_POST['simpan'])) {
-    $title = trim($_POST['title']);
-    $description = trim($_POST['description']);
-    $price = (int) $_POST['price'];
+    $posisi = trim($_POST['posisi']);
+    $syarat = trim($_POST['syarat']);
+    $status = trim($_POST['status']);
 
-    if ($title == '' || $description == '' || $price <= 0) {
+    if ($posisi == '' || $syarat == '' || $status <= 0) {
         $error = "Semua field wajib diisi dengan benar.";
     } else {
-        $sql = "insert into courses (name, description, price) values('$title', '$description', '$price')";
+        $sql = "insert into lowongan (nama_lowongan, syarat, status) values('$posisi', '$syarat', '$status')";
         $query = mysqli_query($conn, $sql);
 
         if ($query) {
@@ -25,36 +25,42 @@ if (isset($_POST['simpan'])) {
 
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Tambah Course</title>
+    <title>Tambah Lowongan</title>
+    <link rel="stylesheet" href="lowongan.css" />
 </head>
+
 <body>
 
-<h1>Tambah Course</h1>
+    <h1>Tambah Lowongan</h1>
 
-<a href="index.php">Kembali</a>
+    <a href="index.php">Kembali</a>
 
-<br><br>
-
-<?php if (isset($error)) : ?>
-    <p style="color:red;"><?= $error; ?></p>
-<?php endif; ?>
-
-<form method="POST">
-    <label>Judul Course</label><br>
-    <input type="text" name="title">
     <br><br>
 
-    <label>Deskripsi</label><br>
-    <textarea name="description" rows="5" cols="40"></textarea>
-    <br><br>
+    <?php if (isset($error)) : ?>
+        <p style="color:red;"><?= $error; ?></p>
+    <?php endif; ?>
 
-    <label>Harga</label><br>
-    <input type="number" name="price">
-    <br><br>
+    <form method="POST">
+        <label>Posisi</label><br>
+        <input type="text" name="posisi">
+        <br><br>
 
-    <button type="submit" name="simpan">Simpan</button>
-</form>
+        <label>Syarat</label><br>
+        <textarea name="syarat" rows="5"></textarea>
+        <br><br>
+
+        <label>Status</label><br>
+        <select name="status">
+            <option value="Aktif">Aktif</option>
+            <option value="Tidak Aktif">Nonaktif</option>
+        </select>
+
+        <button type="submit" name="simpan">Simpan</button>
+    </form>
 
 </body>
+
 </html>

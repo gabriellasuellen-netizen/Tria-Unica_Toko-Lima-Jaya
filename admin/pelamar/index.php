@@ -3,14 +3,11 @@ session_start();
 
 include "../../koneksi.php";
 
-// cek login admin
 if (!isset($_SESSION['username'])) {
     header("Location: ../../login.php");
     exit;
 }
 
-
-// mengambil data pelamar
 $sql = "SELECT 
     pelamar.*,
     lowongan.nama_lowongan

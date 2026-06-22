@@ -2,14 +2,14 @@
 include "../security.php";
 include "../../koneksi.php";
 
-$id = $_GET['id'] ?? '';
+$id_lowongan = $_GET['id'] ?? '';
 
-if ($id == '') {
+if ($id_lowongan == '') {
     header("Location: index.php");
     exit;
 }
 
-$sql = "select * from courses where id='$id'";
+$sql = "select * from lowongan where id_lowongan='$id_lowongan'";
 $query = mysqli_query($conn, $sql);
 $data = mysqli_fetch_assoc($query);
 
@@ -21,34 +21,47 @@ if (!$data) {
 
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Edit Course</title>
+    <title>Edit Lowongan</title>
 </head>
+
 <body>
 
-<h1>Edit Course</h1>
+    <h1>Edit Lowongan</h1>
 
-<a href="index.php">Kembali</a>
+    <a href="index.php">Kembali</a>
 
-<br><br>
-
-<form method="POST" action="ubah.php">
-    <input type="hidden" name="id" value="<?= $data['id']; ?>">
-
-    <label>Judul Course</label><br>
-    <input type="text" name="title" value="<?= htmlspecialchars($data['name']); ?>">
     <br><br>
 
-    <label>Deskripsi</label><br>
-    <textarea name="description" rows="5" cols="40"><?= htmlspecialchars($data['description']); ?></textarea>
-    <br><br>
+    <form method="POST" action="ubah.php">
+        <input type="hidden" name="id_lowongan" value="<?= $data['id_lowongan']; ?>">
 
-    <label>Harga</label><br>
-    <input type="number" name="price" value="<?= $data['price']; ?>">
-    <br><br>
+        <label>Posisi</label><br>
+        <input type="text" name="nama_lowongan" value="<?= htmlspecialchars($data['nama_lowongan']); ?>">
+        <br><br>
 
-    <button type="submit" name="ubah">Ubah</button>
-</form>
+        <label>Syarat</label><br>
+        <textarea
+            name="syarat"
+            rows="5"><?= htmlspecialchars($data['syarat']); ?></textarea>
+        <br><br>
+
+        <select name="status">
+            <option value="Aktif"
+                <?= $data['status'] == 'Aktif' ? 'selected' : ''; ?>>
+                Aktif
+            </option>
+            <option value="Tidak Aktif"
+                <?= $data['status'] == 'Tidak Aktif' ? 'selected' : ''; ?>>
+                Nonaktif
+            </option>
+        </select>
+        <br><br>
+
+        <button type="submit" name="ubah">Edit</button>
+    </form>
 
 </body>
+
 </html>

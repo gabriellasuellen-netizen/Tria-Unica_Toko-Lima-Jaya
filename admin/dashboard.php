@@ -24,7 +24,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 
 
     <h1>
-      Welcome, Admin!
+      Welcome, admin!
     </h1>
 
     <p class="subtitle">
