@@ -25,7 +25,8 @@ $query = mysqli_query($conn, $sql);
 
 <head>
     <title>Data Pelamar</title>
-    <link rel="stylesheet" href="../css/pelamar.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -41,7 +42,7 @@ $query = mysqli_query($conn, $sql);
 
     <div class="container">
 
-        <h1>DATA PELAMAR</h1>
+        <h1>Data Pelamar</h1>
 
         <table>
 
@@ -54,6 +55,7 @@ $query = mysqli_query($conn, $sql);
                 <th>Email</th>
                 <th>Posisi</th>
                 <th>Tentang Diri</th>
+                <th>Status</th>
             </tr>
 
 
@@ -72,6 +74,7 @@ $query = mysqli_query($conn, $sql);
                     <td><?= $data['email'] ?></td>
                     <td><?= $data['nama_lowongan'] ?></td>
                     <td><?= $data['tentang_diri'] ?></td>
+                    <td><?= $data['status'] ?></td>
                 </tr>
 
 
