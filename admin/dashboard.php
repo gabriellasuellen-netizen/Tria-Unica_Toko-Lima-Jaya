@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "header.php";
 
 if (!isset($_SESSION['username'])) {
   header("Location: ../login.php");
@@ -24,7 +25,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 
 
     <h1>
-      Welcome, admin!
+      Welcome, <?= $_SESSION['username']; ?>!
     </h1>
 
     <p class="subtitle">
