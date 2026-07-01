@@ -9,7 +9,13 @@ if (!isset($_SESSION['username'])) {
     exit;
 }
 
-$sql = "SELECT * FROM lowongan ORDER BY id_lowongan DESC";
+$sql = "SELECT
+            faq.*,
+            users.username
+        FROM faq
+        LEFT JOIN users
+        ON faq.id_users = users.id_users
+        ORDER BY faq.id_faq DESC";
 $query = mysqli_query($conn, $sql);
 
 ?>
@@ -18,7 +24,7 @@ $query = mysqli_query($conn, $sql);
 <html>
 
 <head>
-    <title>Kelola Lowongan</title>
+    <title>Kelola FAQ</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/header.css">
     <link
@@ -35,10 +41,10 @@ $query = mysqli_query($conn, $sql);
 
     <div class="container">
 
-        <h1>Daftar Lowongan</h1>
+        <h1>Kelola FAQ</h1>
 
         <a href="tambah.php" class="btn-tambah">
-            + Tambah Lowongan
+            + Tambah
         </a>
 
 
@@ -46,9 +52,9 @@ $query = mysqli_query($conn, $sql);
 
             <tr>
                 <th>No</th>
-                <th>Posisi</th>
-                <th>Syarat</th>
-                <th>Status</th>
+                <th>Pertanyaan</th>
+                <th>Jawaban</th>
+                <th>Diubah oleh</th>
                 <th>Aksi</th>
             </tr>
 
@@ -69,48 +75,29 @@ $query = mysqli_query($conn, $sql);
 
 
                     <td>
-                        <?= $data['nama_lowongan']; ?>
+                        <?= $data['pertanyaan']; ?>
                     </td>
 
 
                     <td>
-
-                        <ul>
-
-                            <?php
-
-                            $syarat = explode("|", $data['syarat']);
-
-                            foreach ($syarat as $s) {
-
-                            ?>
-
-                                <li>
-                                    <?= $s; ?>
-                                </li>
-
-                            <?php } ?>
-
-                        </ul>
-
+                        <?= $data['jawaban']; ?>
                     </td>
 
-
                     <td>
-                        <?= $data['status']; ?>
+                        <?= $data['username']; ?>
                     </td>
 
                     <td>
 
                         <a class="btn-edit"
-                            href="edit.php?id=<?= $data['id_lowongan']; ?>">
+                            href="edit.php?id=<?= $data['id_faq']; ?>">
                             Edit
                         </a>
 
 
                         <a class="btn-hapus"
-                            href="hapus.php?id=<?= $data['id_lowongan']; ?>"
-                            onclick="return confirm('Yakin ingin menghapus lowongan ini?')">
+                            href="hapus.php?id=<?= $data['id_faq']; ?>"
+                            onclick="return confirm('Yakin ingin menghapus FAQ ini?')">
                             Hapus
                         </a>
 

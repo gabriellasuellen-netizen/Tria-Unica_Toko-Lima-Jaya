@@ -6,16 +6,23 @@ include "koneksi.php";
 $username = $_POST['username'];
 $password = md5($_POST['password']);
 
-$sql = "select * from users where username='$username' and password='$password'";
-$query = mysqli_query($conn,$sql);
-$num = mysqli_num_rows($query);
+$sql = "SELECT * FROM users
+        WHERE username='$username'
+        AND password='$password'";
 
-if($num > 0){
-    $_SESSION['username'] = $username;
+$query = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($query) > 0) {
+
+    $data = mysqli_fetch_assoc($query);
+
+    $_SESSION['id_users'] = $data['id_users'];
+    $_SESSION['username'] = $data['username'];
+
     header("Location: admin/dashboard.php");
     exit;
-}else{
+} else {
+
     header("Location: login.php");
     exit;
 }
-?>
