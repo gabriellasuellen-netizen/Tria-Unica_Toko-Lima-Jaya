@@ -74,6 +74,14 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 
       </a>
 
+      <a href="faq/index.php"
+        class="menu-card">
+
+        <h3>Kelola FAQ</h3>
+        <p>Mengatur informasi FAQ</p>
+
+      </a>
+
 
 
       <a href="logout.php"
