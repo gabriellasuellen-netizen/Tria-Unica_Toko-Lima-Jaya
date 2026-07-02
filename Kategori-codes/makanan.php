@@ -1,6 +1,18 @@
 <?php
 include "../header.php";
 include "../kategori.php";
+include "../koneksi.php";
+
+$sql = "SELECT
+            produk.*,
+            kategori.nama_kategori
+        FROM produk
+        JOIN kategori
+        ON produk.id_kategori = kategori.id_kategori
+        WHERE kategori.nama_kategori = 'Makanan'
+        ORDER BY produk.nama ASC";
+
+$query = mysqli_query($conn, $sql);
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,7 +29,7 @@ include "../kategori.php";
 </head>
 
 <body>
-  <section class="banner">
+  <section class="banner" style="background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../img/Hero-img/food.jpg') center/cover no-repeat;">
     <div class="banner-content">
       <p>MAKANAN</p>
     </div>
@@ -28,54 +40,17 @@ include "../kategori.php";
 
     <div class="best-wrapper">
       <div class="best-container">
-        <!-- card 1 -->
-        <div class="best-card">
-          <img src="../Produk-img/Makanan/chocolatos.jpeg" />
-          <h3>Chocolatos</h3>
-          <p>Kategori : Makanan <br />Merek : Chocolatos</p>
-        </div>
-
-        <!-- card 2 -->
-        <div class="best-card">
-          <img src="../Produk-img/Makanan/romakelapacoklat.jpeg" />
-          <h3>Roma Kelapa Cream Coklat</h3>
-          <p>Kategori : Makanan<br />Merek : Roma</p>
-        </div>
-
-        <!-- card 3 -->
-        <div class="best-card">
-          <img src="../Produk-img/Makanan/sardines.jpeg" />
-          <h3>Sardines in Tomato Sauce</h3>
-          <p>Kategori : Makanan<br />Merek : Sardines</p>
-        </div>
-
-        <!-- card 4 -->
-        <div class="best-card">
-          <img src="../Produk-img/Makanan/nextar.jpeg" />
-          <h3>Nextar Chocolate Pie</h3>
-          <p>Kategori : Makanan<br />Merek : Nextar</p>
-        </div>
-
-        <!-- card 5 -->
-        <div class="best-card">
-          <img src="../Produk-img/Makanan/romakelapavanilla.jpeg" />
-          <h3>Roma Kelapa Cream Vanilla</h3>
-          <p>Kategori : Makanan<br />Merek : Roma</p>
-        </div>
-
-        <!-- card 6 -->
-        <div class="best-card">
-          <img src="../Produk-img/Makanan/chilisardines.jpeg" />
-          <h3>Chili Sardines</h3>
-          <p>Kategori : Makanan<br />Merek : Chili</p>
-        </div>
-
-        <!-- card 7 -->
-        <div class="best-card">
-          <img src="../Produk-img/Makanan/yupistrawberrykiss.jpeg" />
-          <h3>Yupi Strawberry Kiss</h3>
-          <p>Kategori : Makanan<br />Merek : Yupi</p>
-        </div>
+        <?php while ($data = mysqli_fetch_assoc($query)) { ?>
+          <div class="best-card">
+            <img src="../img/Produk-img/<?= $data['gambar']; ?>">
+            <h3><?= htmlspecialchars($data['nama']); ?></h3>
+            <p>
+              Kategori : <?= htmlspecialchars($data['nama_kategori']); ?>
+              <br>
+              Merek : <?= htmlspecialchars($data['merek']); ?>
+            </p>
+          </div>
+        <?php } ?>
       </div>
       <div class="scroll-arrow left">
         <i class="fa-solid fa-chevron-left"></i>

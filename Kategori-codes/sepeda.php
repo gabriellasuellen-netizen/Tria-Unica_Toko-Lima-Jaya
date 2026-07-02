@@ -1,6 +1,18 @@
 <?php
 include "../header.php";
 include "../kategori.php";
+include "../koneksi.php";
+
+$sql = "SELECT
+            produk.*,
+            kategori.nama_kategori
+        FROM produk
+        JOIN kategori
+        ON produk.id_kategori = kategori.id_kategori
+        WHERE kategori.nama_kategori = 'Sepeda & Aksesorisnya'
+        ORDER BY produk.nama ASC";
+
+$query = mysqli_query($conn, $sql);
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,7 +29,7 @@ include "../kategori.php";
 </head>
 
 <body>
-  <section class="banner">
+  <section class="banner" style="background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../img/Hero-img/bicycles.jpg') center/cover no-repeat;">
     <div class="banner-content">
       <p>SEPEDA & AKSESORISNYA</p>
     </div>
@@ -28,54 +40,17 @@ include "../kategori.php";
 
     <div class="best-wrapper">
       <div class="best-container">
-        <!-- card 1 -->
-        <div class="best-card">
-          <img src="../Produk-img/Sepeda & Aksesorisnya/18minirolet.jpeg" />
-          <h3>18 Mini Rolet Glowing</h3>
-          <p>Kategori : Sepeda & Aksesorisnya <br />Merek : -</p>
-        </div>
-
-        <!-- card 2 -->
-        <div class="best-card">
-          <img src="../Produk-img/Sepeda & Aksesorisnya/bmxsepeda.jpeg" />
-          <h3>Sepeda BMX</h3>
-          <p>Kategori : Sepeda & Aksesorisnya <br />Merek : BMX</p>
-        </div>
-
-        <!-- card 3 -->
-        <div class="best-card">
-          <img src="../Produk-img/Sepeda & Aksesorisnya/pompapendekalloyunicycle.jpeg" />
-          <h3>Pompa Pendek Alloy Unicycle</h3>
-          <p>Kategori : Sepeda & Aksesorisnya <br />Merek : Unicycle</p>
-        </div>
-
-        <!-- card 4 -->
-        <div class="best-card">
-          <img src="../Produk-img/Sepeda & Aksesorisnya/sadelgenio2665.jpeg" />
-          <h3>Sadel Genio 2665</h3>
-          <p>Kategori : Sepeda & Aksesorisnya <br />Merek : Genio</p>
-        </div>
-
-        <!-- card 5 -->
-        <div class="best-card">
-          <img src="../Produk-img/Sepeda & Aksesorisnya/sepedatrexmtb.jpeg" />
-          <h3>Sepeda TREX MTB 24 XT 780</h3>
-          <p>Kategori : Sepeda & Aksesorisnya <br />Merek : MTB Trex</p>
-        </div>
-
-        <!-- card 6 -->
-        <div class="best-card">
-          <img src="../Produk-img/Sepeda & Aksesorisnya/tabung36dpngenio.jpeg" />
-          <h3>Tabung 36 Depan Genio</h3>
-          <p>Kategori : Sepeda & Aksesorisnya <br />Merek : Genio</p>
-        </div>
-
-        <!-- card 7 -->
-        <div class="best-card">
-          <img src="../Produk-img/Sepeda & Aksesorisnya/x-630electricbike.jpeg" />
-          <h3>X-630 Electric Bike</h3>
-          <p>Kategori : Sepeda & Aksesorisnya <br />Merek : EXOTIC</p>
-        </div>
+        <?php while ($data = mysqli_fetch_assoc($query)) { ?>
+          <div class="best-card">
+            <img src="../img/Produk-img/<?= $data['gambar']; ?>">
+            <h3><?= htmlspecialchars($data['nama']); ?></h3>
+            <p>
+              Kategori : <?= htmlspecialchars($data['nama_kategori']); ?>
+              <br>
+              Merek : <?= htmlspecialchars($data['merek']); ?>
+            </p>
+          </div>
+        <?php } ?>
       </div>
       <div class="scroll-arrow left">
         <i class="fa-solid fa-chevron-left"></i>

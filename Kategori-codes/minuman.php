@@ -1,6 +1,18 @@
 <?php
 include "../header.php";
 include "../kategori.php";
+include "../koneksi.php";
+
+$sql = "SELECT
+            produk.*,
+            kategori.nama_kategori
+        FROM produk
+        JOIN kategori
+        ON produk.id_kategori = kategori.id_kategori
+        WHERE kategori.nama_kategori = 'Minuman'
+        ORDER BY produk.nama ASC";
+
+$query = mysqli_query($conn, $sql);
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,7 +29,7 @@ include "../kategori.php";
 </head>
 
 <body>
-  <section class="banner">
+  <section class="banner" style="background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../img/Hero-img/drinks.jpg') center/cover no-repeat;">
     <div class="banner-content">
       <p>MINUMAN</p>
     </div>
@@ -28,48 +40,17 @@ include "../kategori.php";
 
     <div class="best-wrapper">
       <div class="best-container">
-
-        <!-- card 2 -->
-        <div class="best-card">
-          <img src="../Produk-img/Minuman/tehsosro.jpeg" />
-          <h3>Teh Celup Sosro</h3>
-          <p>Kategori : Minuman<br />Merek : Sosro</p>
-        </div>
-
-        <!-- card 3 -->
-        <div class="best-card">
-          <img src="../Produk-img/Minuman/sariwangi.jpeg" />
-          <h3>Teh Sariwangi</h3>
-          <p>Kategori : Minuman<br />Merek : Sariwangi</p>
-        </div>
-
-        <!-- card 4 -->
-        <div class="best-card">
-          <img src="../Produk-img/Minuman/airminumams318.jpeg" />
-          <h3>Air Minum AMS 318</h3>
-          <p>Kategori : Minuman<br />Merek : AMS 318</p>
-        </div>
-
-        <!-- card 5 -->
-        <div class="best-card">
-          <img src="../Produk-img/Minuman/airminumhoki899.jpeg" />
-          <h3>Air Minum Hoki 899</h3>
-          <p>Kategori : Minuman<br />Merek : Hoki 899</p>
-        </div>
-
-        <!-- card 6 -->
-        <div class="best-card">
-          <img src="../Produk-img/Minuman/ultramilk.jpeg" />
-          <h3>Susu UHT Ultra Milk</h3>
-          <p>Kategori : Minuman<br />Merek : Ultra Milk</p>
-        </div>
-
-        <!-- card 7 -->
-        <div class="best-card">
-          <img src="../Produk-img/Minuman/kopijojohn.jpeg" />
-          <h3>Kopi Jojohn</h3>
-          <p>Kategori : Minuman<br />Merek : Jojohn</p>
-        </div>
+        <?php while ($data = mysqli_fetch_assoc($query)) { ?>
+          <div class="best-card">
+            <img src="../img/Produk-img/<?= $data['gambar']; ?>">
+            <h3><?= htmlspecialchars($data['nama']); ?></h3>
+            <p>
+              Kategori : <?= htmlspecialchars($data['nama_kategori']); ?>
+              <br>
+              Merek : <?= htmlspecialchars($data['merek']); ?>
+            </p>
+          </div>
+        <?php } ?>
       </div>
       <div class="scroll-arrow left">
         <i class="fa-solid fa-chevron-left"></i>

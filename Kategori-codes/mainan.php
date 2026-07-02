@@ -1,6 +1,18 @@
 <?php
 include "../header.php";
 include "../kategori.php";
+include "../koneksi.php";
+
+$sql = "SELECT
+            produk.*,
+            kategori.nama_kategori
+        FROM produk
+        JOIN kategori
+        ON produk.id_kategori = kategori.id_kategori
+        WHERE kategori.nama_kategori = 'Mainan'
+        ORDER BY produk.nama ASC";
+
+$query = mysqli_query($conn, $sql);
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,7 +29,7 @@ include "../kategori.php";
 </head>
 
 <body>
-  <section class="banner">
+  <section class="banner" style="background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../img/Hero-img/toy.jpg') center/cover no-repeat;">
     <div class="banner-content">
       <p>MAINAN</p>
     </div>
@@ -28,41 +40,17 @@ include "../kategori.php";
 
     <div class="best-wrapper">
       <div class="best-container">
-        <!-- card 1 -->
-        <div class="best-card">
-          <img src="../Produk-img/Mainan/fishing.jpeg" />
-          <h3>Fishing Games</h3>
-          <p>Kategori : Mainan <br />Merek : Premium Toys</p>
-        </div>
-
-        <!-- card 2 -->
-        <div class="best-card">
-          <img src="../Produk-img/Mainan/dinovalley.jpeg" />
-          <h3>Dino Valley</h3>
-          <p>Kategori : Mainan <br />Merek : Dinosaur World</p>
-        </div>
-
-        <!-- card 3 -->
-        <div class="best-card">
-          <img src="../Produk-img/Mainan/jm23098.jpeg" />
-          <h3>Wild Explorer</h3>
-          <p>Kategori : Mainan <br />Merek : JM</p>
-        </div>
-
-        <!-- card 4 -->
-        <div class="best-card">
-          <img src="../Produk-img/Mainan/pesawat.jpeg" />
-          <h3>Pesawat Mainan</h3>
-          <p>Kategori : Mainan <br />Merek : Lion</p>
-        </div>
-
-        <!-- card 5 -->
-        <div class="best-card">
-          <img src="../Produk-img/Mainan/raketbulutangkis.jpeg" />
-          <h3>Raket Bulu Tangkis</h3>
-          <p>Kategori : Mainan <br />Merek : -</p>
-        </div>
-
+        <?php while ($data = mysqli_fetch_assoc($query)) { ?>
+          <div class="best-card">
+            <img src="../img/Produk-img/<?= $data['gambar']; ?>">
+            <h3><?= htmlspecialchars($data['nama']); ?></h3>
+            <p>
+              Kategori : <?= htmlspecialchars($data['nama_kategori']); ?>
+              <br>
+              Merek : <?= htmlspecialchars($data['merek']); ?>
+            </p>
+          </div>
+        <?php } ?>
       </div>
       <div class="scroll-arrow left">
         <i class="fa-solid fa-chevron-left"></i>

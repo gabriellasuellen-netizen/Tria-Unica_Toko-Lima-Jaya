@@ -1,6 +1,18 @@
 <?php
 include "../header.php";
 include "../kategori.php";
+include "../koneksi.php";
+
+$sql = "SELECT
+            produk.*,
+            kategori.nama_kategori
+        FROM produk
+        JOIN kategori
+        ON produk.id_kategori = kategori.id_kategori
+        WHERE kategori.nama_kategori = 'Bahan Kue & Masakan'
+        ORDER BY produk.nama ASC";
+
+$query = mysqli_query($conn, $sql);
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,7 +29,7 @@ include "../kategori.php";
 </head>
 
 <body>
-  <section class="banner">
+  <section class="banner" style="background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../img/Hero-img/cook.jpg') center/cover no-repeat;">
     <div class="banner-content">
       <p>BAHAN KUE & MASAKAN</p>
     </div>
@@ -28,54 +40,17 @@ include "../kategori.php";
 
     <div class="best-wrapper">
       <div class="best-container">
-        <!-- card 1 -->
-        <div class="best-card">
-          <img src="../Produk-img/Bahan Kue & Masakan/masako.jpeg" />
-          <h3>Masako Bumbu Masakan</h3>
-          <p>Kategori : Bahan Kue & Masakan <br />Merek : Masako</p>
-        </div>
-
-        <!-- card 2 -->
-        <div class="best-card">
-          <img src="../Produk-img/Bahan Kue & Masakan/maizenaku.jpeg" />
-          <h3>Tepung Maizena</h3>
-          <p>Kategori : Bahan Kue & Masakan<br />Merek : Maizenaku</p>
-        </div>
-
-        <!-- card 3 -->
-        <div class="best-card">
-          <img src="../Produk-img/Bahan Kue & Masakan/dairycrown.jpeg" />
-          <h3>Dairy Crown Condensed Creamer</h3>
-          <p>Kategori : Bahan Kue & Masakan<br />Merek : Dairy Crown</p>
-        </div>
-
-        <!-- card 4 -->
-        <div class="best-card">
-          <img src="../Produk-img/Bahan Kue & Masakan/capenaak.jpeg" />
-          <h3>Susu Kental Manis</h3>
-          <p>Kategori : Bahan Kue & Masakan<br />Merek : Cap Enaak</p>
-        </div>
-
-        <!-- card 5 -->
-        <div class="best-card">
-          <img src="../Produk-img/Bahan Kue & Masakan/duniadark.jpeg" />
-          <h3>Dunia Dip Glaze Dark</h3>
-          <p>Kategori : Bahan Kue & Masakan<br />Merek : Dunia</p>
-        </div>
-
-        <!-- card 6 -->
-        <div class="best-card">
-          <img src="../Produk-img/Bahan Kue & Masakan/duniagreentea.jpeg" />
-          <h3>Dunia Dip Glaze Green Tea</h3>
-          <p>Kategori : Bahan Kue & Masakan<br />Merek : Dunia</p>
-        </div>
-
-        <!-- card 7 -->
-        <div class="best-card">
-          <img src="../Produk-img/Bahan Kue & Masakan/duniastrawberry.jpeg" />
-          <h3>Dunia Dip Glaze Strawberry</h3>
-          <p>Kategori : Bahan Kue & Masakan<br />Merek : Dunia</p>
-        </div>
+        <?php while ($data = mysqli_fetch_assoc($query)) { ?>
+          <div class="best-card">
+            <img src="../img/Produk-img/<?= $data['gambar']; ?>">
+            <h3><?= htmlspecialchars($data['nama']); ?></h3>
+            <p>
+              Kategori : <?= htmlspecialchars($data['nama_kategori']); ?>
+              <br>
+              Merek : <?= htmlspecialchars($data['merek']); ?>
+            </p>
+          </div>
+        <?php } ?>
       </div>
       <div class="scroll-arrow left">
         <i class="fa-solid fa-chevron-left"></i>

@@ -142,9 +142,6 @@ html {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../Hero-img/clean.jpg") center/cover no-repeat;
   color: #f5efe6;
   height: 250px;
   margin-bottom: 0px;

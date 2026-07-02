@@ -1,6 +1,18 @@
 <?php
 include "../header.php";
 include "../kategori.php";
+include "../koneksi.php";
+
+$sql = "SELECT
+            produk.*,
+            kategori.nama_kategori
+        FROM produk
+        JOIN kategori
+        ON produk.id_kategori = kategori.id_kategori
+        WHERE kategori.nama_kategori = 'Alat Tulis & Kantor'
+        ORDER BY produk.nama ASC";
+
+$query = mysqli_query($conn, $sql);
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,7 +29,7 @@ include "../kategori.php";
 </head>
 
 <body>
-  <section class="banner">
+  <section class="banner" style="background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../img/Hero-img/stationery.jpg') center/cover no-repeat;">
     <div class="banner-content">
       <p>ALAT TULIS & KANTOR</p>
     </div>
@@ -28,54 +40,17 @@ include "../kategori.php";
 
     <div class="best-wrapper">
       <div class="best-container">
-        <!-- card 1 -->
-        <div class="best-card">
-          <img src="../Produk-img/Alat Tulis & Kantor/joyco.jpeg" />
-          <h3>Joyco Vokus</h3>
-          <p>Kategori : Alat Tulis & Kantor <br />Merek : Joyco</p>
-        </div>
-
-        <!-- card 2 -->
-        <div class="best-card">
-          <img src="../Produk-img/Alat Tulis & Kantor/bukutulis.jpeg" />
-          <h3>Buku Tulis</h3>
-          <p>Kategori : Alat Tulis & Kantor <br />Merek : Alfa Campus</p>
-        </div>
-
-        <!-- card 3 -->
-        <div class="best-card">
-          <img src="../Produk-img/Alat Tulis & Kantor/joyco correction fluid.jpeg" />
-          <h3>Joyco Correction Fluid</h3>
-          <p>Kategori : Alat Tulis & Kantor <br />Merek : Joyco</p>
-        </div>
-
-        <!-- card 4 -->
-        <div class="best-card">
-          <img src="../Produk-img/Alat Tulis & Kantor/kenko.jpeg" />
-          <h3>Kenko Gel Ink Pen</h3>
-          <p>Kategori : Alat Tulis & Kantor <br />Merek : Kenko</p>
-        </div>
-
-        <!-- card 5 -->
-        <div class="best-card">
-          <img src="../Produk-img/Alat Tulis & Kantor/montanagelinkpen.jpeg" />
-          <h3>Montana Gel Ink Pen</h3>
-          <p>Kategori : Alat Tulis & Kantor <br />Merek : Montana</p>
-        </div>
-
-        <!-- card 6 -->
-        <div class="best-card">
-          <img src="../Produk-img/Alat Tulis & Kantor/origami.jpeg" />
-          <h3>Kertas Origami 2 sisi</h3>
-          <p>Kategori : Alat Tulis & Kantor <br />Merek : -</p>
-        </div>
-
-        <!-- card 7 -->
-        <div class="best-card">
-          <img src="../Produk-img/Alat Tulis & Kantor/bukugambar.jpeg" />
-          <h3>Buku Gambar A4</h3>
-          <p>Kategori : Alat Tulis & Kantor <br />Merek : -</p>
-        </div>
+        <?php while ($data = mysqli_fetch_assoc($query)) { ?>
+          <div class="best-card">
+            <img src="../img/Produk-img/<?= $data['gambar']; ?>">
+            <h3><?= htmlspecialchars($data['nama']); ?></h3>
+            <p>
+              Kategori : <?= htmlspecialchars($data['nama_kategori']); ?>
+              <br>
+              Merek : <?= htmlspecialchars($data['merek']); ?>
+            </p>
+          </div>
+        <?php } ?>
       </div>
       <div class="scroll-arrow left">
         <i class="fa-solid fa-chevron-left"></i>
