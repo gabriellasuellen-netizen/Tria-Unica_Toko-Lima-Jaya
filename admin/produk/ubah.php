@@ -9,6 +9,7 @@ if (isset($_POST['ubah'])) {
     $merek = trim($_POST['merek']);
     $id_kategori = $_POST['id_kategori'];
     $gambar_lama = $_POST['gambar_lama'];
+    $id_users = $_SESSION['id_users'];
 
     if ($nama == '' || $id_kategori == '') {
         echo "Semua field wajib diisi.";
@@ -50,7 +51,8 @@ if (isset($_POST['ubah'])) {
             SET nama='$nama',
                 merek='$merek',
                 gambar='$gambar',
-                id_kategori='$id_kategori'
+                id_kategori='$id_kategori',
+                id_users='$id_users'
             WHERE id_produk='$id_produk'";
 
     $query = mysqli_query($conn, $sql);

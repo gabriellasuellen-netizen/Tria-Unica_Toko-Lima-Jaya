@@ -8,7 +8,7 @@ $terlaris = mysqli_query($conn, "
     FROM produk
     JOIN kategori
     ON produk.id_kategori = kategori.id_kategori
-    ORDER BY id_produk DESC
+    ORDER BY id_produk ASC
     LIMIT 14
 ");
 

@@ -2,6 +2,8 @@
 include "../security.php";
 include "../../koneksi.php";
 
+$id_users = $_SESSION['id_users'];
+
 if (isset($_POST['simpan'])) {
 
     $nama = trim($_POST['nama']);
@@ -43,9 +45,9 @@ if (isset($_POST['simpan'])) {
         $pathDatabase = $folder . "/" . $gambar;
 
         $sql = "INSERT INTO produk
-                (nama, merek, gambar, id_kategori)
+                (nama, merek, gambar, id_kategori, id_users)
                 VALUES
-                ('$nama', '$merek', '$pathDatabase', '$id_kategori')";
+                ('$nama', '$merek', '$pathDatabase', '$id_kategori', '$id_users')";
 
         $query = mysqli_query($conn, $sql);
 

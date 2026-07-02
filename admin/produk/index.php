@@ -11,10 +11,13 @@ if (!isset($_SESSION['username'])) {
 
 $sql = "SELECT 
             produk.*,
-            kategori.nama_kategori
+            kategori.nama_kategori,
+            users.username
         FROM produk
         LEFT JOIN kategori
         ON produk.id_kategori = kategori.id_kategori
+        LEFT JOIN users
+        ON produk.id_users = users.id_users
         ORDER BY produk.id_produk DESC";
 $query = mysqli_query($conn, $sql);
 
@@ -56,6 +59,7 @@ $query = mysqli_query($conn, $sql);
                 <th>Merek</th>
                 <th>Gambar</th>
                 <th>Kategori</th>
+                <th>Diubah oleh</th>
                 <th>Aksi</th>
             </tr>
 
@@ -86,6 +90,10 @@ $query = mysqli_query($conn, $sql);
 
                     <td>
                         <?= $data['nama_kategori']; ?>
+                    </td>
+
+                    <td>
+                        <?= $data['username']; ?>
                     </td>
 
                     <td>
