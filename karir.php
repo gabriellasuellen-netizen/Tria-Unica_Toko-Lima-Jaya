@@ -117,99 +117,10 @@ $query = mysqli_query($conn, $sql);
 
   <div class="spacer"></div>
 
-  <footer class="footer">
-
-    <div class="footer-grid">
-
-      <!-- kolom 1 -->
-      <div class="col">
-
-        <div class="top">
-          <h1 class="logo">Lima Jaya</h1>
-          <p>TEMUI KEBUTUHAN SEHARI-HARI ANDA DI SINI</p>
-        </div>
-
-        <div class="bottom">
-          <h3>HUBUNGI KAMI</h3>
-          <p>0895 6201 30261</p>
-        </div>
-
-      </div>
-
-      <!-- kolom 2 -->
-      <div class="col">
-
-        <div class="top">
-          <h3>PERUSAHAAN</h3>
-
-          <ul>
-            <li><a href="tentang.php">Tentang kami</a></li>
-            <li><a href="produk.php">Produk</a></li>
-            <li><a href="karir.php">Karir</a></li>
-          </ul>
-
-        </div>
-
-        <div class="bottom">
-          <h3>ALAMAT KAMI</h3>
-
-          <p>
-            Jl. Busuliung No. 07,
-            Dusun Sembatu,
-            Kec. Balai,
-            Kab. Sanggau,
-            Prov. Kalimantan Barat
-          </p>
-
-        </div>
-
-      </div>
-
-      <!-- kolom 3 -->
-      <div class="col">
-
-        <div class="top">
-          <h3>LAYANAN</h3>
-
-          <ul>
-            <li>Hubungi Kami</li>
-            <li><a href="faq.php">FAQ</a></li>
-          </ul>
-
-        </div>
-
-      </div>
-
-      <!-- kolom 4 -->
-      <div class="col">
-
-        <div class="top">
-
-          <h3>FITUR</h3>
-
-          <ul>
-            <li><a href="produk.php">Kategori</a></li>
-            <li><a href="produk.php">Produk Terlaris</a></li>
-          </ul>
-
-        </div>
-
-        <div class="bottom">
-
-          <h3>BUKA</h3>
-
-          <p>
-            Setiap Hari,<br>
-            06.00 - 16.00 WIB
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </footer>
+  <?php
+  $base = "";
+  include "footer.php";
+  ?>
 
   <script src="js/karir.js"></script>
 

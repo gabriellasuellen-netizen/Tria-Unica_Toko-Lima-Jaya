@@ -74,7 +74,39 @@ $query = mysqli_query($conn, $sql);
                     <td><?= $data['email'] ?></td>
                     <td><?= $data['nama_lowongan'] ?></td>
                     <td><?= $data['tentang_diri'] ?></td>
-                    <td><?= $data['status'] ?></td>
+                    <td>
+                        <form action="ubah_status.php" method="POST">
+
+                            <input
+                                type="hidden"
+                                name="id_pelamar"
+                                value="<?= $data['id_pelamar']; ?>">
+
+                            <select name="status">
+
+                                <option value="Menunggu"
+                                    <?= $data['status'] == 'Menunggu' ? 'selected' : ''; ?>>
+                                    Menunggu
+                                </option>
+
+                                <option value="Diterima"
+                                    <?= $data['status'] == 'Diterima' ? 'selected' : ''; ?>>
+                                    Diterima
+                                </option>
+
+                                <option value="Ditolak"
+                                    <?= $data['status'] == 'Ditolak' ? 'selected' : ''; ?>>
+                                    Ditolak
+                                </option>
+
+                            </select>
+
+                            <button type="submit">
+                                Simpan
+                            </button>
+
+                        </form>
+                    </td>
                 </tr>
 
 
